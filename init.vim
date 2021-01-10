@@ -3,14 +3,22 @@ filetype off
 
 "call plug namager
 call plug#begin('~/.config/nvim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'neoclide/coc.nvim', {'branch' : 'release'}
-Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox' "Apareance
+Plug 'tpope/vim-fugitive' "Git integration
+Plug 'preservim/nerdtree' "Directory viusalization
+Plug 'ctrlpvim/ctrlp.vim' "for searchingi
+
+if has('nvim')
+	Plug 'Shougo/deoplete.vim', { 'do': ':UpdateRemotePlugins'}
+else
+	Plug 'Shougo/deoplete.vim'
+	Plug 'roxma/nvim-yarp'
+	Plug 'roxma/nvim-hug-neovim-rpc'
+endif
+
 Plug 'deoplete-plugins/deoplete-clang'
 Plug 'sbdchd/neoformat'
+Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 set number
@@ -36,6 +44,8 @@ function! LightlineReadonly()
 	return &readonly && filetype !=# 'help' ? 'RO' : ''
 endfunction
 
+let g:deoplete#enable_at_startup = 1
+
 let g:ale_linters = {
     \ 'python': ['pylint'],
     \ 'vim': ['vint'],
@@ -50,3 +60,11 @@ let g:neoformat_cpp_clangformat = {
 \}
 let g:neoformat_enabled_cpp = ['clangformat']
 let g:neoformat_enabled_c = ['clangformat']
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
