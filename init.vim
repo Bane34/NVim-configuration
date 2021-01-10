@@ -8,10 +8,12 @@ Plug 'tpope/vim-fugitive' "Git integration
 Plug 'preservim/nerdtree' "Directory viusalization
 Plug 'ctrlpvim/ctrlp.vim' "for searchingi
 
+Plug 'dense-analysis/ale'
+
 if has('nvim')
-	Plug 'Shougo/deoplete.vim', { 'do': ':UpdateRemotePlugins'}
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
 else
-	Plug 'Shougo/deoplete.vim'
+	Plug 'Shougo/deoplete.nvim'
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/nvim-hug-neovim-rpc'
 endif
