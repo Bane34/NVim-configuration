@@ -6,9 +6,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox' "Apareance
 Plug 'tpope/vim-fugitive' "Git integration
 Plug 'preservim/nerdtree' "Directory viusalization
-Plug 'ctrlpvim/ctrlp.vim' "for searchingi
-
 Plug 'dense-analysis/ale'
+Plug 'tpenguinltg/vim-closing-brackets'
 
 if has('nvim')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
@@ -18,6 +17,7 @@ else
 	Plug 'roxma/nvim-hug-neovim-rpc'
 endif
 
+Plug 'zchee/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-clang'
 Plug 'sbdchd/neoformat'
 Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
@@ -62,11 +62,3 @@ let g:neoformat_cpp_clangformat = {
 \}
 let g:neoformat_enabled_cpp = ['clangformat']
 let g:neoformat_enabled_c = ['clangformat']
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
