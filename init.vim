@@ -20,7 +20,7 @@ endif
 Plug 'zchee/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-clang'
 Plug 'sbdchd/neoformat'
-Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
+"Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 set number
